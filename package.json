@@ -1,0 +1,49 @@
+{
+  "name": "@bwqdxxg/dumi",
+  "version": "0.0.1",
+  "description": "",
+  "repository": "",
+  "author": "bwqdxxg",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "build": "yarn setTsConfig && yarn cssRemove && father-build && yarn buildCssPush && yarn buildCssRequireRemove && yarn cssRemoveReCall && yarn setTsConfigReCall",
+    "buildCssPush": "node public/build.js cssPush",
+    "buildCssRequireRemove": "node public/build.js cssRequireRemove",
+    "setTsConfig": "node public/build.js setTsConfig --true",
+    "setTsConfigReCall": "node public/build.js setTsConfig",
+    "cssRemove": "node public/build.js cssRemove --true",
+    "cssRemoveReCall": "node public/build.js cssRemove",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "react": "16.14.0"
+  },
+  "devDependencies": {
+    "@umijs/preset-react": "1.8.22",
+    "@umijs/test": "3.5.17",
+    "dumi": "1.1.36",
+    "father-build": "1.19.8",
+    "glob-promise": "^4.2.2",
+    "lint-staged": "10.5.4",
+    "prettier": "1.19.1",
+    "yorkie": "2.0.0"
+  }
+}

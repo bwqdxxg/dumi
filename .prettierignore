@@ -1,0 +1,12 @@
+**/*.svg
+**/*.ejs
+**/*.html
+**/*.ts
+**/*.tsx
+**/*.js
+**/*.less
+**/*.css
+package.json
+.umi
+.umi-production
+.umi-test
